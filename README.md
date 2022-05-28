@@ -2,11 +2,16 @@
 Dockerfile apache2 webserver with PHP8
 
 
-Apache2
+**Apache2**
 
-PHP 8.1
+Web root set on virtualhost as /var/www/html
+
+**PHP 8.1**
+
+From ppa:ondrej/php
 
 **Modules PHP 8.1**
+
     php8.1-cli \
     php8.1-curl \
     php8.1-mbstring \
