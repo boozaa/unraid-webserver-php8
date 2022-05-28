@@ -1,18 +1,18 @@
 FROM ubuntu:focal
 LABEL Author="boozaa" Description="Ubuntu Focal - Apache2 + PHP 8.1 + modules + composer"
 
-# Stop dpkg-reconfigure tzdata from prompting for input
+# Stop dpkg-reconfigure tzdata input
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Configure timezone
 RUN echo "Europe/Paris" > /etc/timezone
+
+# Web root
 RUN mkdir -p /var/www/html/public/
 
-RUN apt-get update
-RUN apt-get -y install software-properties-common && add-apt-repository ppa:ondrej/php -y
-RUN apt-get update
-RUN apt-get upgrade -y
-
+# Dépôt php8.1
+RUN apt-get update && apt-get -y install software-properties-common && add-apt-repository ppa:ondrej/php -y
+RUN apt-get update && apt-get upgrade -y
 
 # Les paquets utiles
 RUN apt-get -y install \
