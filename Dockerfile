@@ -35,9 +35,7 @@ RUN apt-get -y install \
         php8.1-mbstring \
         php8.1-gd \
         php8.1-mysql \
-        #php8.1-json \
         php8.1-ldap \
-        #php8.1-mime-type \
         php8.1-pgsql \
         php8.1-tidy \
         php8.1-intl \
@@ -58,11 +56,12 @@ RUN apt-get -y install libcap2-bin && \
     a2disconf other-vhosts-access-log && \
     chown -Rh www-data. /var/run/apache2
 
+# Ménage
 RUN a2disconf other-vhosts-access-log && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Apache
-#COPY conf/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY conf/vhost.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite headers expires ext_filter remoteip
 
 EXPOSE 80
