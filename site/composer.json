@@ -1,0 +1,13 @@
+{
+    "require": {
+        "bcosca/fatfree": "^3.7",
+        "ikkez/f3-cortex": "1.*",
+        "ikkez/f3-falsum": "^2.8",
+        "ikkez/f3-flash": "^1.0",
+        "ikkez/f3-assets": "dev-master",
+        "ikkez/f3-events": "^1.0",
+        "ikkez/f3-mailer": "^1.2",
+        "ikkez/f3-middleware": "^1.1",
+        "ikkez/f3-fal": "^0.7.2"
+    }
+}
